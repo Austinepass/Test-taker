@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="end"
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="88dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="22dp"
+            android:src="@drawable/timer" />
+
+        <TextView
+            android:id="@+id/verbal_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="#009900"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="" />
+
+    </LinearLayout>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/verbal_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/my_button"
+            android:layout_margin="16dp"
+            android:textColor="#ffffff"
+            android:id="@+id/verbal_submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>
