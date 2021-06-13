@@ -1,4 +1,4 @@
-package com.example.android.gmattaker;
+package com.example.android.gmattaker.model;
 
 import java.util.List;
 

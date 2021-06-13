@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android.gmattaker.model.ModelData;
+
 public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestHolder> {
     private List<ModelData> mModelDataList;
     private Context context;
