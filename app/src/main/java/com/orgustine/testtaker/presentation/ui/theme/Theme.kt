@@ -1,4 +1,4 @@
-package com.orgustine.testtaker.ui.theme
+package com.orgustine.testtaker.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -3,4 +3,31 @@ plugins {
     id 'com.android.application' version '8.0.0' apply false
     id 'com.android.library' version '8.0.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.22' apply false
+    // TODO: id 'com.google.gms.google-services' version '4.3.15' apply false
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
+}
+
+// Versions
+ext {
+    coreVersion = '1.10.1'
+    appCompatVersion = '1.6.1'
+    playServicesVersion = '20.6.0'
+    lifecycleVersion = '2.3.1'
+    materialComponentVersion = '1.8.0'
+    hiltVersion = '2.44'
+    hiltComposeVersion = '1.0.0'
+    navVersion = '2.5.3'
+    firebaseBomVersion = '32.1.1'
+    coroutineVersion = '1.5.2'
+    gsonVersion = '2.8.6'
+    retrofitVersion = '2.9.0'
+    navVersion = '2.7.0'
+    roomVersion = '2.4.1'
+    coilVersion = '1.3.2'
+    splashScreenVersion = '1.0.0'
+    coilVersion = '2.2.0'
+
+    junitVersion = '4.13.2'
+    junitExtVersion = '1.1.5'
+    espressoCoreVersion = '3.5.1'
 }

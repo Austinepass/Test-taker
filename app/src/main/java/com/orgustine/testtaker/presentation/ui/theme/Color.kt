@@ -1,4 +1,4 @@
-package com.orgustine.testtaker.ui.theme
+package com.orgustine.testtaker.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
