@@ -20,6 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.orgustine.testtaker.R
@@ -28,7 +30,10 @@ import com.orgustine.testtaker.R
 fun HomeScreen(
     onNavigate: (String) -> Unit
 ) {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         GreetingView()
         TopicsView()
     }
@@ -61,7 +66,11 @@ private fun GreetingView() {
 private fun TopicsView() {
     LazyRow {
         items(topics) {
-            TopicCard(title = it.first, resourceId = it.second)
+            TopicCard(
+                modifier = Modifier.padding(16.dp),
+                title = it.first,
+                resourceId = it.second
+            )
         }
     }
 }
@@ -73,7 +82,7 @@ private fun TopicCard(
     resourceId: Int
 ) {
     Card(
-        modifier = modifier.padding(16.dp),
+        modifier = modifier,
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
@@ -102,6 +111,7 @@ private val topics = listOf(
 )
 
 @Composable
+@PreviewLightDark
 @Preview(showBackground = true)
 fun HomePreview() {
     HomeScreen { }
