@@ -6,7 +6,6 @@ import com.orgustine.testtaker.presentation.ui.theme.AppTheme
 @Composable
 fun MainAppView() {
     AppTheme {
-        AppNavGraph(
-        )
+        AppNavGraph()
     }
 }

@@ -1,8 +1,9 @@
 package com.orgustine.testtaker.presentation.navigation
 
+import android.util.Log
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -13,13 +14,21 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.orgustine.testtaker.presentation.home.HomeScreen
+import com.orgustine.testtaker.presentation.practice.PracticeScreen
+import com.orgustine.testtaker.presentation.practice.SummaryScreen
 import com.orgustine.testtaker.presentation.topics.TopicsListScreen
 import com.orgustine.testtaker.util.HOME_ROUTE
+import com.orgustine.testtaker.util.PRACTICE_ROUTE
+import com.orgustine.testtaker.util.SCORE
+import com.orgustine.testtaker.util.SUMMARY_ROUTE
+import com.orgustine.testtaker.util.TOPIC
 import com.orgustine.testtaker.util.TOPICS_ROUTE
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,25 +43,25 @@ fun AppNavGraph() {
             SnackbarHost(hostState = SnackbarHostState())
         },
         topBar = {
-            if (currentRoute != HOME_ROUTE) {
+            if (currentRoute == TOPICS_ROUTE) {
                 TopAppBar(
                     title = {},
                     navigationIcon = {
                         IconButton(onClick = { navController.popBackStack() }) {
                             Icon(
-                                imageVector = Icons.Default.ArrowBack,
+                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                                 contentDescription = "back arrow"
                             )
                         }
                     }
                 )
             }
-        },
-        floatingActionButton = {
-            AppFAB(currentRoute) {
-                navController.navigate(TOPICS_ROUTE)
-            }
         }
+        /* floatingActionButton = {
+             AppFAB(currentRoute) {
+                 navController.navigate(TOPICS_ROUTE)
+             }
+         }*/
     ) { innerPadding ->
 
         NavHost(
@@ -64,6 +73,24 @@ fun AppNavGraph() {
                 HomeScreen {
                     navController.navigate(it)
                 }
+            }
+            composable(
+                route = "$PRACTICE_ROUTE/{$TOPIC}",
+                arguments = listOf(navArgument(TOPIC) { type = NavType.StringType })
+            ) { backStackEntry ->
+                PracticeScreen(
+                    topic = backStackEntry.arguments?.getString(TOPIC),
+                    onNavigate = { navController.navigate(it) }
+                )
+            }
+            composable(
+                route = "$SUMMARY_ROUTE/{$SCORE}",
+                arguments = listOf(navArgument(SCORE) { type = NavType.IntType })
+            ) { backStackEntry ->
+                SummaryScreen(
+                    score = backStackEntry.arguments?.getInt(SCORE),
+                    onNavigate = { navController.navigate(HOME_ROUTE) }
+                )
             }
             composable(TOPICS_ROUTE) {
                 TopicsListScreen()

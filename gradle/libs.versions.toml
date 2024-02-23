@@ -1,7 +1,7 @@
 [versions]
 android-buildTools = "34.0.0"
 android-compileSdk = "34"
-android-minSdk = "26"
+android-minSdk = "25"
 android-targetSdk = "34"
 androidx-activity = "1.8.2"
 androidx-compose-compiler = "1.5.8"
@@ -23,6 +23,7 @@ ktx = "1.9.0"
 kotlinx-coroutines = "1.7.3"
 kotlinx-serialization = "1.6.2"
 loggingInterceptor = "5.0.0-alpha.3"
+lottieCompose = "6.3.0"
 playServicesVersion = "20.7.0"
 plugin-android = "8.2.2"
 plugin-dependencyUpdates = "0.51.0"
@@ -158,6 +159,7 @@ kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
 logging-interceptor-v500alpha3 = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesVersion" }
 plugin-android = { module = "com.android.tools.build:gradle", version.ref = "plugin-android" }
 plugin-dagger-hilt = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "google-dagger" }

@@ -1,16 +1,15 @@
 package com.orgustine.testtaker.di
 
-import com.orgustine.testtaker.data.remote.QuizApi
-import com.orgustine.testtaker.util.BASE_URL
+import com.google.ai.client.generativeai.GenerativeModel
+import com.orgustine.testtaker.BuildConfig
+import com.orgustine.testtaker.data.remote.QuizResponse
+import com.orgustine.testtaker.util.MODEL_NAME
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -19,17 +18,16 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideStockApi(): QuizApi {
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create())
-            .client(
-                OkHttpClient.Builder()
-                    .addInterceptor(HttpLoggingInterceptor().apply {
-                        level = HttpLoggingInterceptor.Level.BASIC
-                    }).build()
-            )
-            .build()
-            .create()
-    }
+    fun providesGenerativeModel() = GenerativeModel(
+        modelName = MODEL_NAME,
+        apiKey = BuildConfig.API_KEY
+    )
+
+    @Provides
+    @Singleton
+    fun providesMoshi() = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+
+    @Provides
+    @Singleton
+    fun providesPracticeAdapter(moshi: Moshi) = moshi.adapter(QuizResponse::class.java)
 }

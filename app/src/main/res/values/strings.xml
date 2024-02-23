@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">TestTaker</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="loading_msg">Give me some seconds to prepare your quiz</string>
+    <string name="loading_success_msg">Your quiz is ready 🥳</string>
+    <string name="loading_failure_msg">An error occurred😖</string>
+    <string name="calculating_msg">Just a moment to finish calculating your score!</string>
+    <string name="summary_msg">You completed the Quiz, and scored %s out of 10!</string>
+    <string name="timer_msg">Your Quiz is ready and will start in:</string>
+    <string name="home">Home</string>
+    <string name="retry">Retry</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="no_msg" />
+    <string name="congratulations">Congratulations 🎉</string>
+    <string name="textfield_error_msg">Input a topic to continue.</string>
+    <string name="finish_quiz">Finish Quiz</string>
+    <string name="finish_quiz_msg">Are you sure you want to finish the quiz now?</string>
+
 </resources>

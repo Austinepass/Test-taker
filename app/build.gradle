@@ -4,7 +4,6 @@ plugins {
     id 'kotlin-android'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
-    // TODO: id 'com.google.gms.google-services'
 }
 
 android {
@@ -31,6 +30,7 @@ android {
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
 
         buildConfigField "String", "API_KEY", "\"${properties.getProperty("API_KEY")}\""
+        buildConfigField "String", "PRACTICE_PROMPT", "\"${properties.getProperty("PRACTICE_PROMPT")}\""
     }
 
     buildTypes {
@@ -80,18 +80,13 @@ dependencies {
     implementation libs.androidx.hiltNavCompose
     kapt libs.google.daggerHiltCompiler
 
-    // TODO: Firebase
-    /*implementation(platform("com.google.firebase:firebase-bom:$firebaseBomVersion"))
-    implementation "com.google.firebase:firebase-firestore-ktx"
-    implementation 'com.google.firebase:firebase-storage'*/
-
-    // Google Play Services
-    implementation libs.play.services.auth
-
     //Retrofit
     implementation libs.square.retrofit
     implementation libs.square.retrofitConverterMoshi
     implementation libs.square.okhttpLoggingInterceptor
+
+    // Moshi
+    implementation(libs.square.moshiKotlin)
 
 
     // Splashscreen
@@ -99,6 +94,10 @@ dependencies {
 
     // Coil
     implementation libs.coilCompose
+
+    // Lottie
+    implementation libs.lottie.compose
+
 
     // Jetpack Compose
     def composeBom = platform libs.androidx.compose.bom
