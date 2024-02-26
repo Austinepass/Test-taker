@@ -3,7 +3,7 @@ Previously a simple app I built at the early stages of my Android development jo
 
 <img src="https://user-images.githubusercontent.com/47523119/121693269-e3d74680-cac0-11eb-8b16-124cb66b9bdf.png" width=25% height=25%>
 
-Now the application has been fully revamped to leverage the Gemini AI capabilities and provide a much richer user experience while maintaining a minimalist user interface.
+Now the application has been fully revamped to leverage the Gemini AI capabilities and provide a much richer user experience while maintaining a minimalistic user interface.
 The idea is simple yet powerful. It allows users to generate quiz questions from literally any topic or field with just a single prompt.
 
 <p float="center">
@@ -19,7 +19,7 @@ _More features are in the works, stay tuned!_
 
 # Setup
 - Clone this repository.
-- Sign up and get our Gemini AI API key.
+- Sign up and get your Gemini AI API key.
 - Place your Gemini API key in local.properties file as API_KEY.
 - Open and run in the latest version of Android Studio.
 
