@@ -26,3 +26,6 @@ _More features are in the works, stay tuned!_
 ***Note: Gemini is not yet supported in every region, so confirm your region is currently supported or use a vpn to bypass this limitation***.
 
 Enjoy!!!
+
+
+Figma Design by [UI Fresh](https://uifresh.net/product/quiz-app-ui-template/).
