@@ -17,6 +17,15 @@ The idea is simple yet powerful. It allows users to generate quiz questions from
 
 _More features are in the works, stay tuned!_
 
+# Tech Stack: 
+ Kotlin, Jetpack Compose, Compose Navigation, Dagger Hilt, Gemini AI Android SDK, Github Actions, Moshi, Lottie
+
+# Demo
+
+https://github.com/Austinepass/Test-taker/assets/47523119/d72335a4-5775-4d72-90c4-0856fd5ea0b3
+
+
+
 # Setup
 - Clone this repository.
 - Sign up and get your Gemini AI API key.
