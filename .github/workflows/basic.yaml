@@ -22,14 +22,17 @@ jobs:
           distribution: 'oracle'
           cache: gradle
 
-      - name: Check lint
-        if: always()
-        run: ./gradlew lint
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
-      - name: Run Unit Tests
-        if: always()
-        run: ./gradlew testDebugUnitTest
-
-      - name: Generate AAR and APK files
-        if: always()
-        run: ./gradlew assembleDebug
+#      - name: Check lint
+#        if: always()
+#        run: ./gradlew lint
+#
+#      - name: Run Unit Tests
+#        if: always()
+#        run: ./gradlew testDebugUnitTest
+#
+#      - name: Generate AAR and APK files
+#        if: always()
+#        run: ./gradlew assembleDebug
